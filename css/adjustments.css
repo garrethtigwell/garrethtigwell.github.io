@@ -25,6 +25,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #F05500;
+}
+
 a.menu-link-style {
   color: #FFFFFF;
   text-decoration: none;
