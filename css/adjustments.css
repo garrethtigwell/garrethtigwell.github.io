@@ -15,7 +15,7 @@
   text-align: center;
   width: 100%;
   height: 25%;
-  padding-top: 5%;
+  padding-top: 2%;
   font-size: 2rem;
   padding-bottom: 10px;
 }
@@ -37,10 +37,22 @@ a.menu-link-style:hover {
   text-decoration: underline;
  }
 
+.menu-profile-pic-space {
+  width:150px;
+  height:150px;
+  border-radius: 100%;
+  border: 5px solid #FFFFFF;
+}
+
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width:15%;
+  height:auto;
   top: 75px;
+}
+
+.main-content-margin{
+  margin-top: 5%;
+  margin-bottom: 5%; 
 }
 
 .container-footer {
