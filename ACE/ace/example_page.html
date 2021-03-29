@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Colours Example Web Page</title>
+    <link rel='stylesheet' href='css/example_page_css.css' />
+    <script type="text/javascript" src="js/json2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jstorage.min.js"></script>
+    <script type="text/javascript" src="js/simulateCVD.js"></script>
+    <script type="text/javascript" src="js/change_example_page_css.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86468340-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body id="mainBackground">
+<div id="headerBar" class="headerFooter">
+    <div class="header">
+        <div id="title" class="headerFooterText">Example Colour Webpage</div>
+        <div id="menu">
+            <div class="buttonOne">
+                <div id="pageOne" class="headerFooterText">No CVD</div>
+            </div>
+            <div class="buttonTwo">
+                <div id="pageTwo" class="headerFooterText">Protan</div>
+            </div>
+            <div class="buttonThree">
+                    <div id="pageThree" class="headerFooterText">Deutan</div>
+            </div>
+            <div class="buttonFour">
+                    <div id="pageFour" class="headerFooterText">Tritan</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainBody" class="backgroundColourText">
+    <div id="topParagraph" class="paragraph"><p>This is 18 point text and it is considered large scale by WCAG 2.0. At the AA level it (or larger font sizes) can be used with a minimum contrast
+        ratio 3:1 or greater to ensure it is legible by people with CVD or other vision impairments as well as people
+        with typical colour vision. To achieve a pass at AAA enhanced contrast the contrast ratio would need to be at least 4.5:1</p></div>
+    <div id="middleParagraph" class="paragraph"><p>This text is 14 point and it is considered small text by WCAG 2.0 (less than 18 point). At the AA level this font size can be used with a minimum contrast
+        ratio 4.5:1 or greater to ensure it is legible by people with CVD or other vision impairments as well as people
+        with typical colour vision. To achieve a pass at AAA enhanced contrast the contrast ratio would need to be at least 7:1</p>
+    <p>When you use <a id="hyperlink">hyperlinks</a> you will want to customise them because your background colour might be too dark for the defult blue, make sure they are still underlined and that
+    the colour you choose to show when the link has been visited is also easy to distinguish against the background, e.g., <a id="hyperlinkClicked">hyperlinks</a> </p></div>
+</div>
+<div id="footerBar" class="headerFooter">
+    <div class="footer">
+        <div id="additionalInfo" class="headerFooterText">In here you can put more links such as: "Jobs", "About Us".
+            You could also put a company address, contact telephone and email</div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+            $('#noCVD').css('text-decoration', 'underline');
+            $('#protanCVD').css('text-decoration', 'none');
+            $('#deutanCVD').css('text-decoration', 'none');
+            $('#tritanCVD').css('text-decoration', 'none');
+            noCVD();
+        })
+
+    $('.buttonOne').mouseenter(function(){
+        $('#pageOne').css('text-decoration', 'underline');
+        $('#pageTwo').css('text-decoration', 'none');
+        $('#pageThree').css('text-decoration', 'none');
+        $('#pageFour').css('text-decoration', 'none');
+        noCVD();
+    })
+
+    $('.buttonTwo').mouseenter(function(){
+        $('#pageOne').css('text-decoration', 'none');
+        $('#pageTwo').css('text-decoration', 'underline');
+        $('#pageThree').css('text-decoration', 'none');
+        $('#pageFour').css('text-decoration', 'none');
+        protanCVD();
+    })
+
+    $('.buttonThree').mouseenter(function(){
+        $('#pageOne').css('text-decoration', 'none');
+        $('#pageTwo').css('text-decoration', 'none');
+        $('#pageThree').css('text-decoration', 'underline');
+        $('#pageFour').css('text-decoration', 'none');
+        deutanCVD();
+    })
+
+    $('.buttonFour').mouseenter(function(){
+        $('#pageOne').css('text-decoration', 'none');
+        $('#pageTwo').css('text-decoration', 'none');
+        $('#pageThree').css('text-decoration', 'none');
+        $('#pageFour').css('text-decoration', 'underline');
+        tritanCVD();
+    })
+</script>
+</body>
+</html>

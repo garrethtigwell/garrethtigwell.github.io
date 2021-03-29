@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ACE: the Accessible Colour Evaluator</title>
+		<link rel='stylesheet' href='css/spectrum.css'/>
+   		<link rel="stylesheet" href="css/ace.css"/>
+  	  	<link rel="stylesheet" href="css/example_page_css.css"/>
+    	<script type="text/javascript" src="js/json2.min.js"></script>
+    	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    	<script type="text/javascript" src="js/jstorage.min.js"></script>
+    	<script type="text/javascript" src="js/spectrum.js"></script>
+    	<script type="text/javascript" src="js/contrast_check.js"></script>
+    	<script type="text/javascript" src="js/simulateCVD.js"></script>
+    	<script type="text/javascript" src="js/change_example_page_css.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86468340-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</head>
+
+	<body>
+		<div id="header">
+            <!--This is the page title-->
+			<h1><span class="orange">ACE</span>: the <span class="orange">A</span>ccessible <span class="orange">C</span>olour <span class="orange">E</span>valuator</h1>
+			<!--This is the where the menu for the website is laid out-->
+            <table id="aceHeaderMenu">
+				<tr>
+					<td width="33%">
+						<a href="welcome.html">Welcome</a>
+					</td>
+					<td width="33%">
+						<a href="cvd.html">CVD info</a>
+					</td>
+					<td width="33%">
+						<a href="index.html" style="text-decoration: underline">Palette</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="divider1"></div>
+
+
+<div class="container">
+<!--These are the headings for the text colour squares-->
+<div id="paletteHeading">
+    <div id="fourHex" class="headingSpace">Page body text colour</div>
+    <div id="fiveHex" class="headingSpace">Header/Footer text colour</div>
+    <div id="sixHex" class="headingSpace">Hyperlink text colour</div>
+    <div id="sevenHex" class="headingSpace">Clicked hyperlink text colour</div>
+</div>
+<div id="positionPalette">
+    <div class="paletteBoxes">
+        <!--This receives input for the page body text colour-->
+        <input type='text' class="basic" id="colourFour"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdFour">
+            <div class="protan" id="protanFour"></div>
+            <div class="deutan" id="deutanFour"></div>
+            <div class="tritan" id="tritanFour"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourFour">#222222</div>
+    </div>
+    <div class="paletteBoxes">
+        <!--This receives input for the header/footer text colour-->
+        <input type='text' class="basic" id="colourFive"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdFive">
+            <div class="protan" id="protanFive"></div>
+            <div class="deutan" id="deutanFive"></div>
+            <div class="tritan" id="tritanFive"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourFive">#222222</div>
+    </div>
+    <div class="paletteBoxes">
+        <!--This receives input for the hyperlink text colour-->
+        <input type='text' class="basic" id="colourSix"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdSix">
+            <div class="protan" id="protanSix"></div>
+            <div class="deutan" id="deutanSix"></div>
+            <div class="tritan" id="tritanSix"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourSix">#222222</div>
+    </div>
+    <div class="paletteBoxes">
+        <!--This receives input for the clicked hyperlink text colour-->
+        <input type='text' class="basic" id="colourSeven"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdSeven">
+            <div class="protan" id="protanSeven"></div>
+            <div class="deutan" id="deutanSeven"></div>
+            <div class="tritan" id="tritanSeven"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourSeven">#222222</div>
+    </div>
+</div>
+    <!--These are the headings for the background colour squares-->
+    <div id="positionSideColumnLabel">
+        <div id="sideColourOne">Page body background colour &#8594</div>
+        <div id="sideColourTwo">Header/Footer background colour &#8594</div>
+        <div id="sideColourThree">Accent/Hover colour &#8594</div>
+    </div>
+    <!--This div element sets up and positions the vertical blocks which run down the left side
+    The div elements will take on the colour of the respective block in the palette (i.e., Four is for the fourth colour-->
+    <div id="positionSideColumn">
+        <div class="sidePaletteBoxes">
+        <!--This receives input for the page body background colour-->
+        <input type='text' class="basic" id="colourOne"/>
+        <!--These are the CVD simulation squares-->
+         <div id="cvdOne">
+            <div class="protan" id="protanOne"></div>
+            <div class="deutan" id="deutanOne"></div>
+            <div class="tritan" id="tritanOne"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourOne">#222222</div>
+    </div>
+    <div class="sidePaletteBoxes">
+        <!--This receives input for the header/footer background colour-->
+        <input type='text' class="basic" id="colourTwo"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdTwo">
+            <div class="protan" id="protanTwo"></div>
+            <div class="deutan" id="deutanTwo"></div>
+            <div class="tritan" id="tritanTwo"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourTwo">#222222</div>
+    </div>
+    <div class="sidePaletteBoxes">
+        <!--This receives input for the accent/hover colour-->
+        <input type='text' class="basic" id="colourThree"/>
+        <!--These are the CVD simulation squares-->
+        <div id="cvdThree">
+            <div class="protan" id="protanThree"></div>
+            <div class="deutan" id="deutanThree"></div>
+            <div class="tritan" id="tritanThree"></div>
+        </div>
+        <!--This is the HEX value label for the colour the square shows-->
+        <div class="hexValues colourThree">#222222</div>
+    </div>
+        <!--These other div elements will be hidden but are necessary to store the HEX value
+        needed in the contrast_check.js getPaletteColours() function-->
+        <div class="One" style="display: none"></div>
+        <div class="Two" style="display: none"></div>
+        <div class="Three" style="display: none"></div>
+        <div class="Four" style="display: none"></div>
+        <div class="Five" style="display: none"></div>
+        <div class="Six" style="display: none"></div>
+        <div class="Seven" style="display: none"></div>
+    </div>
+
+    <div id="resultsSection">
+        <!--This is the result block in the first row and first column-->
+        <div class="resultBox colourOneFour">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultFirstFourthOne">&#10008</div>
+                <div class="contrastRationTwo resultFirstFourthTwo">&#10008</div>
+                <div class="contrastRationThree resultFirstFourthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioFirst actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the first row and second column-->
+        <div class="resultBox colourOneFive">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultFirstFifthOne">&#10008</div>
+                <div class="contrastRationTwo resultFirstFifthTwo">&#10008</div>
+                <div class="contrastRationThree resultFirstFifthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioSecond actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the first row and third column-->
+        <div class="resultBox colourOneSix">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultFirstSixthOne">&#10008</div>
+                <div class="contrastRationTwo resultFirstSixthTwo">&#10008</div>
+                <div class="contrastRationThree resultFirstSixthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioThird actualCR">1.00</div>
+            </div>
+        </div>
+
+
+        <!--This is the result block in the first row and fourth column-->
+        <div class="resultBox colourOneSeven">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultFirstSeventhOne">&#10008</div>
+                <div class="contrastRationTwo resultFirstSeventhTwo">&#10008</div>
+                <div class="contrastRationThree resultFirstSeventhThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioFourth actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the second row and first column-->
+        <div class="resultBox colourTwoFour">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultSecondFourthOne">&#10008</div>
+                <div class="contrastRationTwo resultSecondFourthTwo">&#10008</div>
+                <div class="contrastRationThree resultSecondFourthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioFifth actualCR">1.00</div>
+            </div>
+        </div>
+
+         <!--This is the result block in the second row and second column-->
+        <div class="resultBox colourTwoFive">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultSecondFifthOne">&#10008</div>
+                <div class="contrastRationTwo resultSecondFifthTwo">&#10008</div>
+                <div class="contrastRationThree resultSecondFifthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioSixth actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the second row and third column-->
+        <div class="resultBox colourTwoSix">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultSecondSixthOne">&#10008</div>
+                <div class="contrastRationTwo resultSecondSixthTwo">&#10008</div>
+                <div class="contrastRationThree resultSecondSixthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioSeventh actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the second row and fourth column-->
+        <div class="resultBox colourTwoSeven">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultSecondSeventhOne">&#10008</div>
+                <div class="contrastRationTwo resultSecondSeventhTwo">&#10008</div>
+                <div class="contrastRationThree resultSecondSeventhThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioEighth actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the third row and first column-->
+        <div class="resultBox colourThreeFour">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultThirdFourthOne">&#10008</div>
+                <div class="contrastRationTwo resultThirdFourthTwo">&#10008</div>
+                <div class="contrastRationThree resultThirdFourthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioNine actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the third row and second column-->
+        <div class="resultBox colourThreeFive">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultThirdFifthOne">&#10008</div>
+                <div class="contrastRationTwo resultThirdFifthTwo">&#10008</div>
+                <div class="contrastRationThree resultThirdFifthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioTen actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the third row and third column-->
+        <div class="resultBox colourThreeSix">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultThirdSixthOne">&#10008</div>
+                <div class="contrastRationTwo resultThirdSixthTwo">&#10008</div>
+                <div class="contrastRationThree resultThirdSixthThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioEleven actualCR">1.00</div>
+            </div>
+        </div>
+
+        <!--This is the result block in the third row and fourth column-->
+        <div class="resultBox colourThreeSeven">
+            <div class="crHeading">
+                <div class="threeToOne">3:1</div>
+                <div class="fourFiveToOne">4.5:1</div>
+                <div class="sevenToOne">7:1</div>
+            </div>
+            <div class="crPassFail">
+                <div class="contrastRationOne resultThirdSeventhOne">&#10008</div>
+                <div class="contrastRationTwo resultThirdSeventhTwo">&#10008</div>
+                <div class="contrastRationThree resultThirdSeventhThree">&#10008</div>
+            </div>
+            <div class="info">
+                <div class="contrastRatioTwelve actualCR">1.00</div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--This link takes the user to see the example webpage which uses the palette colours that have been chosen-->
+<div id="exampleLink"><a href="example_page.html" target="_blank" id="exampleLinkColour">Click to view the colours used in a visual example</a></div>
+
+<div id="research">Information about the development of ACE can be found in our 2017 TACCESS publication (<a href="http://dl.acm.org/citation.cfm?id=3014588&CFID=901720957&CFTOKEN=29498354" target="_blank" id="researchColour">TACCESS link</a>). We are currently working on an improved version of ACE, please email Garreth Tigwell (<a href="mailto:g.w.tigwell@dundee.ac.uk" target="_top" id="researchColour">g.w.tigwell@dundee.ac.uk</a>) if you idenitfy any issues when using ACE or to request specific features not yet available.</div>
+
+<!--This sets the div elements that act as on/off buttons for the help function-->
+<div id="helpSelect">Turn help: <div id="helpOn">On</div> <div id="helpOff" style="text-decoration: underline">Off</div>
+</div>
+<!--This sets the div elements that act as on/off buttons for the changing what is written in the labels for the squares-->
+<div id="changeLabels">Example label: <div id="labelExample" style="text-decoration: underline">On</div> <div id="labelBasic">Off</div>
+</div>
+
+<div id="helpWindow">
+    <!--This part is what contains the help information-->
+    <div id="helpText">
+        <p>When you click each squares on the top row, you will be able to choose different colours for the text which you plan to use on your website. The labels above each square indicate where the font will be seen on the example page, this can be turned off. The three vertical squares on the left side of the grid are for choosing background colours and when clicked will let you choose background colours. Again, the labels indicate where the colours are going to be used on the example page, but can be turned off if desired.
+    The contrast ratio results are organised in the 4x3 grid. Each row relates to its respective background colour, while the columns relate to their respective text colour. Thus the first results square (reading from left to right, top to bottom) shows the contrast ratio score of the first background colour and first text colour, while the second results square is the contrast ratio score of the first background colour and second text colour, and so on.</p>
+    <p>When you select a colour and you have confirmed it the results table will update accordingly. Within the palette colour
+    squares you will see the colour vision deficiency simulation. The first smaller square is for Protan simulation (P), the second for Deutan (D)
+    simulation and the third for Tritan (T). For example:</p>
+    <p><center><img src="img/cvdExample.png" alt="this image provides a visual example for the user to understand how to interpret the colour palette"></center></p>
+    <p>The HEX value (e.g., #FF0000) for each of the palette block displays underneath so that you can copy the colour code easily to put into your files. When looking at the results table 
+    there are a number of things to look out for. If you look at these two examples:</p>
+    <p><center><img src="img/failExample.png" alt="this image provides a visual example for a result where there are only fails at all levels"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img src="img/resultsExample.png" alt="this image provides a visual example for a result where there is at least one pass"></center></p>
+    <p>The image on the left shows how the results square will look if no minimum contrast level is met. The background colour
+    becomes darker making it easier to find the squares where there is a pass. The image on the right demonstrates this. Notice the tick for pass
+    is in blue so that again it stands out more quickly. The number in large text shows you the actual contrast ratio so that you can see how far away from a pass or fail two colours are. The
+    WCAG ratio levels are also shown so that you are aware what size the text needs to be at that pass level. More information about this can be found <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" id="exampleLinkColour" style="text-decoration: underline">here</a> and <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html" id="exampleLinkColour" style="text-decoration: underline">here</a>.</p>
+    <p>Once colours have been chosen, click the link to see the example page. Hover over the header menu to see different CVD simulations of the colour scheme. You can return to the palette tool to make changes and will only need to refresh the example page to see the updated colours.</p>
+    <br>
+    <br>
+    </div>
+</div>
+
+<!--This is the message and loading window that runs if the HTML5 canvas is still loading the CVD lookup tables-->
+<div id="pageLoad">
+    <div id="loading">Please wait while the tool is loading...</div>
+</div>
+
+    <!--This sets up each canvas in which the relevant lookup tables will be stored in
+    so that the javascript code can access it-->
+    </div>
+         <canvas id="canvasProtan" width="4096" height="4096" style="display: none">Please use a browser that supports HTML5 Canvas</canvas>
+         <canvas id="canvasDeutan" width="4096" height="4096" style="display: none">Please use a browser that supports HTML5 Canvas</canvas>
+         <canvas id="canvasTritan" width="4096" height="4096" style="display: none">Please use a browser that supports HTML5 Canvas</canvas>
+    </div>
+
+
+
+		<script>
+        
+    //Once the page stops loading the pageLoad div is turned off and the user will see the colour tool
+    $(window).load(function(){
+        $('#pageLoad').css('display', 'none');
+    });
+
+    //This is simply changing the on/off divs so that when on is clicked it shows an underline and removes the underline from the off button
+    //It will also turn on the help window
+    $('#helpOn').click(function(){
+        $('#helpOn').css('text-decoration', 'underline');
+        $('#helpOff').css('text-decoration', 'none');
+        $('#helpWindow').css('display', 'inline');
+    })
+
+    //This is simply changing the on/off divs so that when off is clicked it shows an underline and removes the underline from the on button
+    //It will also turn off the help window
+    $('#helpOff').click(function(){
+        $('#helpOn').css('text-decoration', 'none');
+        $('#helpOff').css('text-decoration', 'underline');
+        $('#helpWindow').css('display', 'none');
+    })
+
+    //This is the part where the example labels are written when the user hits the on button
+    $('#labelExample').click(function(){
+        $('#labelExample').css('text-decoration', 'underline');
+        $('#labelBasic').css('text-decoration', 'none');
+        $("#sideColourOne").html("Page body background colour &#8594");
+        $("#sideColourTwo").html("Header/Footer background colour  &#8594");
+        $("#sideColourThree").html("Accent/Hover colour &#8594");
+        $("#fourHex").text("Page body text colour");
+        $("#fiveHex").text("Header/Footer text colour");
+        $("#sixHex").text("Hyperlink text colour");
+        $("#sevenHex").text("Clicked hyperlink text colour");
+    })
+
+    //This is the part where the example labels are changed to basic ones when the user hits the off button
+    $('#labelBasic').click(function(){
+        $('#labelExample').css('text-decoration', 'none');
+        $('#labelBasic').css('text-decoration', 'underline');
+        $("#sideColourOne").html("Background colour one &#8594");
+        $("#sideColourTwo").html("Background colour two &#8594");
+        $("#sideColourThree").html("Background colour three &#8594");
+        $("#fourHex").text("Text colour one");
+        $("#fiveHex").text("Text colour two");
+        $("#sixHex").text("Text colour three");
+        $("#sevenHex").text("Text colour four");
+    })
+
+    //This starts the process of storing the HEX colour values of the colour picking squares
+    $.jStorage.set("backgroundColourKey", "#222222");
+    $.jStorage.set("headerFooterKey", "#222222");
+    $.jStorage.set("backgroundTextKey", "#222222");
+    $.jStorage.set("headerTextKey", "#222222");
+    $.jStorage.set("hoverColourKey", "#222222");
+    $.jStorage.set("hyperlinkColourKey", "#222222");
+    $.jStorage.set("clickedHyperlinkColourKey", "#222222");
+
+    //This starts the process of storing the HEX colour values of the Protan simulation of the colour picking squares
+    $.jStorage.set("backgroundColourProtanKey", "#222222");
+    $.jStorage.set("headerFooterProtanKey", "#222222");
+    $.jStorage.set("backgroundTextProtanKey", "#222222");
+    $.jStorage.set("headerTextProtanKey", "#222222");
+    $.jStorage.set("hoverColourProtanKey", "#222222");
+    $.jStorage.set("hyperlinkColourProtanKey", "#222222");
+    $.jStorage.set("clickedHyperlinkColourProtanKey", "#222222");
+
+    //This starts the process of storing the HEX colour values of the Deutan simulation of the colour picking squares
+    $.jStorage.set("backgroundColourDeutanKey", "#222222");
+    $.jStorage.set("headerFooterDeutanKey", "#222222");
+    $.jStorage.set("backgroundTextDeutanKey", "#222222");
+    $.jStorage.set("headerTextDeutanKey", "#222222");
+    $.jStorage.set("hoverColourDeutanKey", "#222222");
+    $.jStorage.set("hyperlinkColourDeutanKey", "#222222");
+    $.jStorage.set("clickedHyperlinkColourDeutanKey", "#222222");
+
+    //This starts the process of storing the HEX colour values of the Tritan simulation of the colour picking squares
+    $.jStorage.set("backgroundColourTritanKey", "#222222");
+    $.jStorage.set("headerFooterTritanKey", "#222222");
+    $.jStorage.set("backgroundTextTritanKey", "#222222");
+    $.jStorage.set("headerTextTritanKey", "#222222");
+    $.jStorage.set("hoverColourTritanKey", "#222222");
+    $.jStorage.set("hyperlinkColourTritanKey", "#222222");
+    $.jStorage.set("clickedHyperlinkColourTritanKey", "#222222");
+
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the page body background colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourOne").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".One").css("backgroundColor", "" + color.toHexString());
+            $(".colourOne").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("backgroundColourKey", "" + color.toHexString());
+
+            simulateProtanOne();
+            simulateDeutanOne();
+            simulateTritanOne();
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".One").css("backgroundColor", "" + color.toHexString());
+            $(".colourOne").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("backgroundColourKey", "" + color.toHexString());
+
+            simulateProtanOne();
+            simulateDeutanOne();
+            simulateTritanOne();
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the header/footer background colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourTwo").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Two").css("backgroundColor", "" + color.toHexString());
+            $(".colourTwo").text("" + color.toHexString());
+            contrastCheck();
+            
+            $.jStorage.set("headerFooterKey", "" + color.toHexString());
+
+            simulateProtanTwo();
+            simulateDeutanTwo();
+            simulateTritanTwo();
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Two").css("backgroundColor", "" + color.toHexString());
+            $(".colourTwo").text("" + color.toHexString());
+            contrastCheck();
+            
+            $.jStorage.set("headerFooterKey", "" + color.toHexString());
+
+            simulateProtanTwo();
+            simulateDeutanTwo();
+            simulateTritanTwo();
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the accent/hover colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourThree").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Three").css("backgroundColor", "" + color.toHexString());
+            $(".colourThree").text("" + color.toHexString());
+            contrastCheck();
+            
+            $.jStorage.set("hoverColourKey", "" + color.toHexString());
+
+            simulateProtanThree();
+            simulateDeutanThree();
+            simulateTritanThree();
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Three").css("backgroundColor", "" + color.toHexString());
+            $(".colourThree").text("" + color.toHexString());
+            contrastCheck();
+            
+            $.jStorage.set("hoverColourKey", "" + color.toHexString());
+
+            simulateProtanThree();
+            simulateDeutanThree();
+            simulateTritanThree();
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the page body text colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourFour").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Four").css("backgroundColor", "" + color.toHexString());
+            $(".colourFour").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("backgroundTextKey", "" + color.toHexString());
+
+            simulateProtanFour();
+            simulateDeutanFour();
+            simulateTritanFour(); 
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Four").css("backgroundColor", "" + color.toHexString());
+            $(".colourFour").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("backgroundTextKey", "" + color.toHexString());
+
+            simulateProtanFour();
+            simulateDeutanFour();
+            simulateTritanFour(); 
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the header/footer text colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourFive").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Five").css("backgroundColor", "" + color.toHexString());
+            $(".colourFive").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("headerTextKey", "" + color.toHexString());
+
+            simulateProtanFive();
+            simulateDeutanFive();
+            simulateTritanFive();       
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Five").css("backgroundColor", "" + color.toHexString());
+            $(".colourFive").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("headerTextKey", "" + color.toHexString());
+
+            simulateProtanFive();
+            simulateDeutanFive();
+            simulateTritanFive();       
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the hyperlink text colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourSix").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Six").css("backgroundColor", "" + color.toHexString());
+            $(".colourSix").text("" + color.toHexString());
+            contrastCheck();
+            $.jStorage.set("hyperlinkColourKey", "" + color.toHexString());
+
+            simulateProtanSix();
+            simulateDeutanSix();
+            simulateTritanSix();
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Six").css("backgroundColor", "" + color.toHexString());
+            $(".colourSix").text("" + color.toHexString());
+            contrastCheck();
+            $.jStorage.set("hyperlinkColourKey", "" + color.toHexString());
+
+            simulateProtanSix();
+            simulateDeutanSix();
+            simulateTritanSix();
+        }
+    });
+
+    //When the user clicks on the first block in the palette the colour picker appears and lets them choose what they want. This is for the clicked hyperlink text colour.
+    //The results are displayed in real time as the user is changing the colour.
+    //The storage of the HEX value is updated.
+    //The contrast check method is called next to calculate the pass and fail results.
+    //The simulation methods are called next so that the colour can be found in the LUT and then shown on screen.
+    $("#colourSeven").spectrum({
+        color: "#222",
+        showInitial: true,
+        showInput: true,
+        chooseText: "Confirm",
+        change: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Seven").css("backgroundColor", "" + color.toHexString());
+            $(".colourSeven").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("clickedHyperlinkColourKey", "" + color.toHexString());
+
+            simulateProtanSeven();
+            simulateDeutanSeven();
+            simulateTritanSeven();
+        },
+        move: function(color) {
+            $(".resultHidden").css('display','inline');
+            $(".Seven").css("backgroundColor", "" + color.toHexString());
+            $(".colourSeven").text("" + color.toHexString());
+            contrastCheck();
+
+            $.jStorage.set("clickedHyperlinkColourKey", "" + color.toHexString());
+
+            simulateProtanSeven();
+            simulateDeutanSeven();
+            simulateTritanSeven();
+        }
+    });
+</script>
+
+    </body>
+</html>
