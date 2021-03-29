@@ -1,0 +1,366 @@
+/*This sets the default background colour and text colour of the main page*/
+body {
+    background-color: #efefef;
+    color: #222222;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'helvetica', 'Lucia Sans Unicode', 'Arial';
+    overflow-x: auto;
+}
+
+.container {
+    position: absolute;
+    top: 10px;
+    min-width: 720px;
+    left: 15%;
+    right: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a{
+    color: #e6e6e6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+
+}
+
+#header {
+    background-color: #1e1e1e;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75px;
+}
+
+#divider1 {
+    background-color: #666666;
+    position: absolute;
+    width: 100%;
+    top: 75px;
+    height: 4px;
+
+}
+
+h1 {
+    position: relative;
+    top: 5px;
+    margin: 0px auto;
+    width: 750px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #e6e6e6;
+    font-family: 'Lucia Sans Unicode', 'Arial';
+}
+
+.orange {
+    color: #f4a019;
+}
+
+#aceHeaderMenu {
+    position: relative;
+    top: 5px;
+    margin: 0px auto;
+    width: 750px;
+    text-align: center;
+    font-family: 'Lucia Sans Unicode', 'Arial';
+    font-size: 14pt;
+}
+
+/*This positions and sets the appearance of the loading screen*/
+#pageLoad {
+    position: absolute;
+    background-color: #efefef;
+    top: 80px;
+    width: 100%;
+    height: 800px;
+}
+
+/*This positions the text in the loading screen*/
+#loading {
+    position: relative;
+    top: 200px;
+    width: 200px;
+	margin: 0px auto;
+	text-align: center;
+    color: #1e1e1e;
+}
+
+/*This positions the text in the cvd.html and help.html pages*/
+#body_text {
+    position: absolute;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: justify;
+	top: 150px;
+	color: #1e1e1e;
+}
+
+/*Positions the help buttons*/
+#helpSelect {
+    position: relative;
+    margin-left: 15%;
+    top: 85px;
+    width: 170px;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+/*Positions the change label buttons*/
+#changeLabels {
+    position: relative;
+    margin-left: 15%;
+    top: 95px;
+    width: 170px;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+/*This makes the cursor change when on the div elements so the user knows they can perform an action*/
+#helpOn, #helpOff, #labelExample, #labelBasic {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/*Positions the help window and sets size/colour*/
+#helpWindow {
+    background-color: #efefef;
+    position: absolute;
+    top: 110px;
+    width: 1100px;
+    height: 700px;
+    left: 50%;
+    margin-left: -550px;
+    display: none;
+}
+
+/*Positions the text in the help window*/
+#helpText {
+    text-align: justify;
+    padding: 0px 80px 0px 80px;
+}
+
+/*This positions the headings for each of the palette boxes*/
+#paletteHeading {
+    position: absolute;
+    top: 105px;
+    width: 416px;
+    left: 50%;
+    margin-left: -208px;
+
+}
+
+/*This divides up space for the headings for each of the palette boxes*/
+.headingSpace {
+    position: relative;
+    width: 25%;
+    height: 30px;
+    float: left;
+    text-align: center;
+    bottom: 0px;
+    font-size: 12px;
+}
+
+/*This positions the seven palette boxes to the centre of the page*/
+#positionPalette {
+    position: absolute;
+    top: 140px;
+    width: 416px;
+    left: 50%;
+    margin-left: -208px;
+}
+
+/*This helps to keep spacing between the palette boxes similar to headings so that everything is inline*/
+.paletteBoxes {
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+/*Positions and sets font/size of labels*/
+#paletteLabelText {
+    position: relative;
+    text-align: right;
+    font-family: 'helvetica', 'Lucia Sans Unicode', 'Arial';
+    font-size: 12pt;
+    top: 35px;
+}
+
+/*sets an initial default colour for each colour square*/
+.One, .Two, .Three, .Four, .Five, .Six, .Seven {
+    background-color: #222222;
+}
+
+/*This positions the HEX values labels*/
+.hexValues {
+    position: relative;
+    height: 17px;
+    width: 94px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/*Positions the div container for the cvd squares*/
+#cvdOne, #cvdTwo, #cvdThree, #cvdFour, #cvdFive, #cvdSix, #cvdSeven {
+    position: relative;
+    margin-top: -34px;
+    margin-left: 1px;
+
+}
+
+/**This sets the height for all the smaller squares that show CVD simulation and keeps them in order (Protan, Deutan, Tritan
+It also sets up the border and default colour**/
+.protan, .deutan, .tritan {
+    width: 31%;
+    height: 30px;
+    float:left;
+    border: solid 2px #222222;
+    border-left: solid 1px #222222;
+    border-right: solid 1px #222222;
+}
+
+/*Positions the side colour square labels*/
+#positionSideColumnLabel {
+    position: absolute;
+    top: 265px;
+    left: 50%;
+    margin-left: -430px;
+    width: 104px;
+    height: 330px;
+}
+
+/*Positions the side colour squares*/
+#sideColourOne, #sideColourTwo, #sideColourThree {
+    position: relative;
+    text-align: right;
+    top: 8%;
+    margin-bottom: 9%;
+    font-size: 12px;
+    height: 33%;
+}
+
+/*This helps space out the colour squares*/
+.sidePaletteBoxes {
+    position: relative;
+    margin-bottom: 41px;
+}
+
+/**This positions the side column where the four squares each take on the colour of the last four colours in the palette**/
+#positionSideColumn {
+    position: absolute;
+    top: 265px;
+    left: 50%;
+    margin-left: -315px;
+}
+
+/**This positions the results section with all the squares**/
+#resultsSection {
+    position: absolute;
+    top: 265px;
+    left: 50%;
+    width: 416px;
+    margin-left: -208px;
+}
+
+/**This keeps the results section in order by putting the next result box to the right of the previous
+when it reaches the limit of the width of #resultSection it will drop to a new line. It also sets the
+box border width, dimensions and colours**/
+.resultBox {
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 90px;
+    height: 90px;
+    border: solid 2px #222222;
+    margin-bottom: 24px;
+    background-color: #747373;
+}
+
+/*These classes are for positioning the three contrast ratio results divs in each results square*/
+.contrastRationOne, .contrastRationTwo, .contrastRationThree {
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    width: 33%;
+}
+
+/**This positions the different contrast ratio levels and pass/fail**/
+.info {
+    position: absolute;
+    padding-left: 4px;
+    width: 100px;
+}
+
+/*Positions the contrast ratio headings*/
+.crHeading {
+    position: absolute;
+    top: 54px;
+    width: 94px;
+    height: 20px;
+}
+
+/*Positions the container for the three contrast ratio results*/
+.crPassFail {
+    position: absolute;
+    top: 66px;
+    width: 90px;
+    height: 20px;
+}
+
+/*Positions where the result for each contrast level will go*/
+.threeToOne, .fourFiveToOne, .sevenToOne {
+    position: relative;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    width: 33%;
+}
+
+/**This positions the actual contrast ratio**/
+.actualCR {
+    position: absolute;
+    top: 15px;
+    width: 90px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 26px;
+    margin-left: -2px;
+}
+
+/**Positions the link that takes a user to an example webpage, which uses the palette colours**/
+#exampleLink {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    margin-left: -187.5px;
+    font-weight: bolder;
+}
+
+/**Sets the colour of the link to the example page so it stands out**/
+#exampleLinkColour {
+    color: #020a70;
+}
+
+/**Positions the description for ACE publication**/
+#research {
+    position: absolute;
+    top: 670px;
+    left: 50%;
+    margin-left: -480px;
+    font-weight: bolder;
+    width: 45%;
+}
+
+/**Sets the colour of the link to the ACE publication so it stands out**/
+#researchColour {
+    color: #0026ec;
+}
