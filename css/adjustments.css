@@ -149,6 +149,10 @@ a.menu-link-style:hover {
   margin-bottom: 20px;
 }
 
+.course-title {
+  font-style: italic;
+}
+
 address {
   font-style: normal;
 }
