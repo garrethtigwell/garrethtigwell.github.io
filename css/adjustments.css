@@ -123,6 +123,10 @@ h1 {
   font-weight: bold;
 }
 
+body {
+  font-size: 1.8em;
+}
+
 .container-footer {
   position: relative;
   width: 100%;
