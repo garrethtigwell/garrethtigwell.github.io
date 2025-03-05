@@ -350,17 +350,35 @@ box border width, dimensions and colours**/
     color: #020a70;
 }
 
+
 /**Positions the description for ACE publication**/
-#research {
+#ace2 {
     position: absolute;
     top: 670px;
     left: 50%;
     margin-left: -480px;
     font-weight: bolder;
-    width: 45%;
+    width: 55%;
+}
+
+/**Sets the colour of the link to the ACE publication so it stands out**/
+#ace2Colour {
+    color: #0026ec;
+    text-decoration: underline;
+}
+
+/**Positions the description for ACE publication**/
+#research {
+    position: absolute;
+    top: 725px;
+    left: 50%;
+    margin-left: -480px;
+    font-weight: bolder;
+    width: 55%;
 }
 
 /**Sets the colour of the link to the ACE publication so it stands out**/
 #researchColour {
     color: #0026ec;
+    text-decoration: underline;
 }
